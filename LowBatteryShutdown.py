@@ -35,7 +35,7 @@ def shutdown_callback_function( shutdown_pin ):
 
  #Dexdan mod 5/4/19 to close omnipy safely (after pod comms finished) before shutting down on low power
  #   os.system("sudo shutdown -h now")
-    os.system("sudo python3 /home/pi/omnipy/omni.py shutdown && sudo shutdown -h now")    
+    os.system("cd /home/pi/omnipy/ && sudo python3 /home/pi/omnipy/omni.py shutdown && sudo shutdown -h now")    
 
 # This is the magic line that adds pin 16 so it is always being watched.
 GPIO.add_event_detect(shutdown_pin, GPIO.RISING, callback=shutdown_callback_function)
